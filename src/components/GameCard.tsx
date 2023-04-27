@@ -1,5 +1,5 @@
-import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
-import React from "react";
+import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { Game } from "../hooks/useGames";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
@@ -11,8 +11,10 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <Card>
+    <Card onClick={() => navigate(`games/${game.slug}`)} cursor={"pointer"}>
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>

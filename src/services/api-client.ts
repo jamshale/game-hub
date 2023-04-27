@@ -23,6 +23,10 @@ class APIClient<T> {
   getAll = (config?: AxiosRequestConfig) => {
     return axoisInstance.get<FetchResponse<T>>(this.endpoint, config).then((res) => res.data)
   }
+
+  get = (id: number | string) => {
+    return axoisInstance.get<T>(this.endpoint + '/' + id).then(res => res.data)
+  }
 }
 
 export default APIClient;
