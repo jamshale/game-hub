@@ -1,7 +1,6 @@
 import APIClient from "../services/api-client";
-import usePlatforms, { Platform } from "./usePlatforms";
-
-const apiClient = new APIClient<Platform>("/platforms");
+import usePlatforms from "./usePlatforms";
+import { Platform } from "../entities/Platform";
 
 const usePlatform = (id?: number) => {
     const { data: platforms } = usePlatforms();
