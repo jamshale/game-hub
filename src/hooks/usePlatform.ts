@@ -1,6 +1,6 @@
 import APIClient from "../services/api-client";
 import usePlatforms from "./usePlatforms";
-import { Platform } from "../entities/Platform";
+import Platform from "../entities/Platform";
 
 const usePlatform = (id?: number) => {
     const { data: platforms } = usePlatforms();
